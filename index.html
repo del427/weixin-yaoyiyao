@@ -41,6 +41,7 @@
             }
         }
         if(window.DeviceMotionEvent){
+            document.body.innerText = '可以摇'
             window.addEventListener('devicemotion',deviceMotionHandler,false);
         }else {
             document.body.innerHTML = 'Not supported on your device'
