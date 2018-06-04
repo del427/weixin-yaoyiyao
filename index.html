@@ -40,6 +40,11 @@
                 last_z = z;
             }
         }
+        if(window.DeviceMotionEvent){
+            window.addEventListener('devicemotion',deviceMotionHandler,false);
+        }else {
+            document.body.innerHTML = 'Not supported on your device'
+        }
     </script>
 </body>
 </html>
