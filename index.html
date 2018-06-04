@@ -7,10 +7,12 @@
     <title>Document</title>
 </head>
 <body>
+    <div></div>
     <script>
         var biaozhun = 800;
         var last_update = 0;
         var x,y,z, last_x = 0, last_y = 0; last_z = 0;
+        var div = document.getElementsByTagName('div')[0];
         function deviceMotionHandler(eventData){
            //获取重力加速x,x,y的集合
             var acceleration = evnetData.accelerationIncludingGravity;
@@ -32,7 +34,8 @@
                 //     document.body.appendChild(div);
                 //     document.body.innerHTML = data +'';
                 var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
-                document.body.innerHTML = speed +'';
+                
+               div.innerHTML = speed +'';
                 //数值超过了标准,代表你摇了
                 if(speed > biaozhun ){
                     alert('摇了')
