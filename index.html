@@ -16,9 +16,9 @@
         function deviceMotionHandler(eventData){
            //获取重力加速x,x,y的集合
             var acceleration = eventData.accelerationIncludingGravity;
-            var cuiTime = new Date().getTime();
+            var curTime = new Date().getTime();
             //新的时间和上次时间的差值超过300
-            if((cuiTime - last_update) > 300){
+            if((curTime - last_update) > 300){
                 //新的时间和上次时间的差值
                 var diffTime = curTime - last_update;
                 //老的时间等于新的时间
