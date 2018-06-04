@@ -31,6 +31,7 @@
                     document.body.appendChild(div);
                     document.body.innerHTML = data +'';
                 var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
+                document.write(speed);
                 //数值超过了标准,代表你摇了
                 if(speed > 800 ){
                     
