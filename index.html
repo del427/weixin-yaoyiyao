@@ -28,11 +28,11 @@
                 y = acceleration.y;
                 z = acceleration.z;
                 //三个方向的新数据- 老三个方向的数据得到的绝对值除以 俩次数据的时间差 
-                // var data = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime;
-                // var div = document.createElement('div');
-                //     div.innerText = data + '';
-                //     document.body.appendChild(div);
-                //     document.body.innerHTML = data +'';
+                var data = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime;
+                var div = document.createElement('div');
+                    div.innerText = data + '';
+                    document.body.appendChild(div);
+                    document.body.innerHTML = data +'';
                 var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
                 //数值超过了标准,代表你摇了
                 if(speed > biaozhun ){
