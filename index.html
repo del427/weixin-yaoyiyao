@@ -26,13 +26,13 @@
                 z = acceleration.z;
                 //三个方向的新数据- 老三个方向的数据得到的绝对值除以 俩次数据的时间差 
                 var data = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime;
-               
+                var div = document.createElement('div');
+                    div.innerText = data + '';
+                    document.body.appendChild(div);
                 var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
                 //数值超过了标准,代表你摇了
                 if(speed > 800 ){
-                    var div = document.createElement('div');
-                    div.innerText = data + '';
-                    document.body.appendChild(div);
+                    
                     alert('摇了')
                 }
                 last_x = x;
