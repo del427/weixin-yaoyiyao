@@ -33,11 +33,8 @@
                 var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
                 //数值超过了标准,代表你摇了
                 if(speed > biaozhun ){
-                    alert('摇了')
-                    var div = document.createElement('div');
-                    div.innerText = data + '';
-                    document.body.appendChild(div);
-                    document.body.innerHTML = data +'';
+                    alert(data)
+                 
                 }
                 last_x = x;
                 last_y = y;
