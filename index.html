@@ -8,6 +8,7 @@
 </head>
 <body>
     <script>
+        var biaozhun = 800;
         var last_update = 0;
         var x,y,z, last_x = 0, last_y = 0; last_z = 0;
         function deviceMotionHandler(eventData){
@@ -25,17 +26,19 @@
                 y = acceleration.y;
                 z = acceleration.z;
                 //三个方向的新数据- 老三个方向的数据得到的绝对值除以 俩次数据的时间差 
-                var data = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime;
-                var div = document.createElement('div');
-                    div.innerText = data + '';
-                    document.body.appendChild(div);
-                    document.body.innerHTML = data +'';
+                // var data = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime;
+                // var div = document.createElement('div');
+                //     div.innerText = data + '';
+                //     document.body.appendChild(div);
+                //     document.body.innerHTML = data +'';
                 var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
-                document.write(speed);
+                document.body.innerHTML = speed +'';
                 //数值超过了标准,代表你摇了
-                if(speed > 800 ){
-                    
+                if(speed > biaozhun ){
                     alert('摇了')
+                    var div = document.createElement('div');
+                    div.innerText = '11';
+                    document.body.appendChild(div);
                 }
                 last_x = x;
                 last_y = y;
